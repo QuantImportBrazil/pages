@@ -133,6 +133,25 @@ Os documentos oficiais do QuantImport serão organizados da seguinte forma:
 
 Outros documentos poderão ser criados quando necessários.
 
+## Padrão de Nomenclatura
+
+Os arquivos de documentação seguirão o padrão:
+
+`<TIPO>-<NÚMERO>_<titulo_em_minusculas>.md`
+
+Tipos definidos:
+
+- `DOC` — Documento Oficial
+- `ATA` — Ata de reunião
+
+Exemplos:
+
+- `DOC-00_metodo_de_desenvolvimento.md`
+- `DOC-01_arquitetura_e_produto.md`
+- `ATA-001_arquitetura_de_publicacao.md`
+
+Os títulos dos arquivos deverão usar letras minúsculas, sem acentos, com palavras separadas por `_`.
+
 ---
 
 # Critérios para Novas Funcionalidades
