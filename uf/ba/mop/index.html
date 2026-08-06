@@ -1,9 +1,15 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Previsões QuantImport para importações de MOP na Bahia.">
+
+  <meta
+    name="description"
+    content="Previsões QuantImport para MOP em BA."
+  >
+
   <title>MOP — BA | QuantImport</title>
 
   <style>
@@ -19,12 +25,16 @@
       --borda: #e3e8e5;
       --fundo: #f4f7f5;
       --branco: #ffffff;
-      --largura: 1280px;
+      --largura: 1180px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -34,22 +44,27 @@
       line-height: 1.5;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
     .topo {
       color: var(--branco);
-      background: linear-gradient(110deg, var(--verde-escuro), var(--verde));
+      background:
+        linear-gradient(110deg, var(--verde-escuro), var(--verde));
       border-bottom: 4px solid var(--dourado);
     }
 
     .topo-conteudo,
     main,
     .rodape-conteudo {
-      width: min(var(--largura), calc(100% - 32px));
+      width: min(var(--largura), calc(100% - 48px));
       margin-inline: auto;
     }
 
-    .topo-conteudo { padding: 22px 0 28px; }
+    .topo-conteudo {
+      padding: 22px 0 28px;
+    }
 
     .marca-linha {
       display: flex;
@@ -90,7 +105,9 @@
       text-underline-offset: 4px;
     }
 
-    .identificacao { margin-top: 28px; }
+    .identificacao {
+      margin-top: 28px;
+    }
 
     .identificacao h1 {
       margin: 0;
@@ -110,7 +127,9 @@
       font-size: 1rem;
     }
 
-    main { padding: 26px 0 48px; }
+    main {
+      padding: 26px 0 48px;
+    }
 
     .cenario {
       display: block;
@@ -126,12 +145,13 @@
       font-weight: 700;
     }
 
-    /* Para cenário extraordinário, troque a classe acima por: cenario extraordinario */
-    .cenario.extraordinario { background: var(--vermelho); }
+    .cenario.extraordinario {
+      background: var(--vermelho);
+    }
 
     .grafico {
-      margin: 0 0 28px;
-      padding: 18px;
+      margin: 0 0 30px;
+      padding: 24px 34px 32px;
       background: var(--branco);
       border: 1px solid var(--borda);
       border-radius: 10px;
@@ -139,7 +159,7 @@
     }
 
     .grafico h2 {
-      margin: 0 0 14px;
+      margin: 0 0 18px;
       color: var(--verde-escuro);
       font-size: 1.3rem;
     }
@@ -164,80 +184,143 @@
       font-size: .92rem;
     }
 
-    .rodape-conteudo p { margin: 0; }
+    .rodape-conteudo p {
+      margin: 0;
+    }
 
     @media (max-width: 680px) {
+      .topo-conteudo,
+      main,
+      .rodape-conteudo {
+        width: min(100% - 24px, var(--largura));
+      }
+
       .marca-linha,
       .rodape-conteudo {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .navegacao { justify-content: flex-start; }
-      .grafico { padding: 10px; }
+      .navegacao {
+        justify-content: flex-start;
+      }
+
+      .grafico {
+        padding: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <header class="topo">
     <div class="topo-conteudo">
+
       <div class="marca-linha">
+
         <a class="marca" href="/pages/">
-          <img src="/pages/assets/logo.png" alt="Logotipo QuantImport">
+          <img
+            src="/pages/assets/logo.png"
+            alt="Logotipo QuantImport"
+          >
           <span>QuantImport</span>
         </a>
 
-        <nav class="navegacao" aria-label="Navegação principal">
+        <nav
+          class="navegacao"
+          aria-label="Navegação principal"
+        >
           <a href="/pages/">Voltar às publicações</a>
-          <a href="/pages/como-interpretar/">Como interpretar os gráficos</a>
+
+          <a href="/pages/como-interpretar/">
+            Como interpretar os gráficos
+          </a>
         </nav>
+
       </div>
 
       <div class="identificacao">
         <h1>MOP</h1>
         <p class="localizacao">BA</p>
-        <p class="emissao"><strong>Emissão:</strong> novembro</p>
+        <p class="emissao">
+          <strong>Emissão:</strong> novembro
+        </p>
       </div>
+
     </div>
   </header>
 
   <main>
-    <a class="cenario" href="/pages/cenarios/base/">
+
+    <a
+      class="cenario"
+      href="/pages/cenarios/base/"
+    >
       Cenário-base: sem ocorrência extraordinária considerada
     </a>
 
-    <section class="grafico">
-      <h2>Visão Geral</h2>
-      <img src="images/overview.png" alt="Visão geral das previsões de MOP para a Bahia">
-    </section>
 
-    <section class="grafico">
-      <h2>1º Trimestre</h2>
-      <img src="images/1º.png" alt="Previsões do primeiro trimestre">
-    </section>
+        <section class="grafico">
+          <h2>Visão Geral</h2>
+          <img
+            src="images/overview.png"
+            alt="Visão geral das previsões"
+          >
+        </section>
+    
 
-    <section class="grafico">
-      <h2>2º Trimestre</h2>
-      <img src="images/2º.png" alt="Previsões do segundo trimestre">
-    </section>
+        <section class="grafico">
+          <h2>Detalhamento 1</h2>
+          <img
+            src="images/1º.png"
+            alt="Detalhamento 1 das previsões"
+          >
+        </section>
+        
 
-    <section class="grafico">
-      <h2>3º Trimestre</h2>
-      <img src="images/3º.png" alt="Previsões do terceiro trimestre">
-    </section>
+        <section class="grafico">
+          <h2>Detalhamento 2</h2>
+          <img
+            src="images/2º.png"
+            alt="Detalhamento 2 das previsões"
+          >
+        </section>
+        
 
-    <section class="grafico">
-      <h2>4º Trimestre</h2>
-      <img src="images/4º.png" alt="Previsões do quarto trimestre">
-    </section>
+        <section class="grafico">
+          <h2>Detalhamento 3</h2>
+          <img
+            src="images/3º.png"
+            alt="Detalhamento 3 das previsões"
+          >
+        </section>
+        
+
+        <section class="grafico">
+          <h2>Detalhamento 4</h2>
+          <img
+            src="images/4º.png"
+            alt="Detalhamento 4 das previsões"
+          >
+        </section>
+        
+
   </main>
 
   <footer>
     <div class="rodape-conteudo">
-      <p><strong>QuantImport — Inteligência para o Agronegócio</strong></p>
+
+      <p>
+        <strong>
+          QuantImport — Inteligência para o Agronegócio
+        </strong>
+      </p>
+
       <p>Data de publicação: 05/08/2026</p>
+
     </div>
   </footer>
+
 </body>
 </html>
