@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Navegação das publicações QuantImport.">
-  <title>Publicações | QuantImport</title>
+  <meta name="description" content="Descrição dos recortes disponíveis nas publicações QuantImport.">
+  <title>Recortes | QuantImport</title>
   <style>
     :root {
       --verde: #146b45; --verde-escuro: #0d4931; --dourado: #c8a52b;
@@ -27,13 +27,11 @@
     .identificacao { margin-top: 28px; }
     .identificacao h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; }
     .identificacao p { margin: 10px 0 0; color: #e6f2eb; }
-    main { padding: 26px 0 48px; }
-    .links { margin: 0; padding: 0; list-style: none; display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-    .links a { display: block; padding: 20px; color: var(--verde-escuro); background: var(--branco);
-      border: 1px solid var(--borda); border-radius: 10px; box-shadow: 0 4px 16px rgba(16,24,40,.06);
-      text-decoration: none; font-size: 1.1rem; font-weight: 700; }
-    .links a:hover, .links a:focus-visible { border-color: var(--verde); text-decoration: underline; }
+    main { padding: 40px 0 56px; }
+    .recorte { max-width: 780px; padding: 28px; background: var(--branco); border: 1px solid var(--borda);
+      border-radius: 10px; box-shadow: 0 4px 16px rgba(16,24,40,.06); }
+    .recorte p { margin: 0; color: var(--texto-suave); }
+    .recorte strong { color: var(--verde-escuro); }
     footer { color: var(--texto-suave); background: var(--branco); border-top: 1px solid var(--borda); }
     .rodape-conteudo { padding: 24px 0; font-size: .92rem; }
     .rodape-conteudo p { margin: 0; }
@@ -48,15 +46,16 @@
     <div class="marca-linha">
       <a class="marca" href="/pages/"><img src="/pages/assets/logo.png" alt="Logotipo QuantImport"><span>QuantImport</span></a>
       <nav class="navegacao" aria-label="Navegação principal">
-        <a href="/sobre/">Home</a>
-        <a href="recorte/">Sobre os recortes</a>
+        <a href="/pages/">Voltar às publicações</a>
       </nav>
     </div>
-    <div class="identificacao"><h1>Publicações</h1><p>Selecione uma opção de recorte geográfico para continuar</p></div>
+    <div class="identificacao"><h1>Recortes</h1><p>Conheça as formas de organização geográfica das publicações</p></div>
   </div></header>
-  <main><ul class="links">
-        <li><a href="uf/">UF</a></li>
-  </ul></main>
+  <main>
+    <article class="recorte">
+      <p><strong>UF</strong> — Unidade da Federação de origem ou destino da operação de comércio exterior em foco.</p>
+    </article>
+  </main>
   <footer><div class="rodape-conteudo"><p><strong>QuantImport — Inteligência para o Agronegócio</strong></p></div></footer>
 </body>
 </html>
