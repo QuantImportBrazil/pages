@@ -67,7 +67,7 @@
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
     }[caractere]));
 
-    fetch('dicionario-produtos.csv')
+    fetch('https://raw.githubusercontent.com/QuantImportBrazil/core/main/comex/assets/dicionario-produtos/dicionario-produtos.csv')
       .then((resposta) => {
         if (!resposta.ok) throw new Error('CSV indisponível');
         return resposta.text();
