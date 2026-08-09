@@ -55,8 +55,8 @@
     <article class="conteudo">
       <p>Consulte o significado dos nicks utilizados para identificar os produtos.</p>
       <table>
-        <thead><tr><th>NCM</th><th>Nick</th></tr></thead>
-        <tbody id="dicionario-produtos"><tr><td colspan="2">Carregando dicionário...</td></tr></tbody>
+        <thead><tr><th>NCM</th><th>Nick</th><th>Nome</th></tr></thead>
+        <tbody id="dicionario-produtos"><tr><td colspan="3">Carregando dicionário...</td></tr></tbody>
       </table>
     </article>
   </main>
@@ -75,12 +75,14 @@
       .then((csv) => {
         const linhas = csv.trim().split(/\r?\n/).slice(1);
         tabela.innerHTML = linhas.map((linha) => {
-          const [ncm, nick] = linha.split(',');
-          return `<tr><td>${escapar(ncm)}</td><td><strong>${escapar(nick)}</strong></td></tr>`;
+          const campos = [...linha.matchAll(/(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^,]*))/g)]
+            .map(([, citado, simples]) => (citado ?? simples).replace(/""/g, '"'));
+          const [ncm, nick, nome] = campos;
+          return `<tr><td>${escapar(ncm)}</td><td><strong>${escapar(nick)}</strong></td><td>${escapar(nome)}</td></tr>`;
         }).join('');
       })
       .catch(() => {
-        tabela.innerHTML = '<tr><td colspan="2">Não foi possível carregar o dicionário.</td></tr>';
+        tabela.innerHTML = '<tr><td colspan="3">Não foi possível carregar o dicionário.</td></tr>';
       });
   </script>
 </body>
