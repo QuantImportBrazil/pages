@@ -32,6 +32,9 @@
       border-radius: 10px; box-shadow: 0 4px 16px rgba(16,24,40,.06); }
     .recorte p { margin: 0; color: var(--texto-suave); }
     .recorte strong { color: var(--verde-escuro); }
+    .recorte table { width: 100%; border-collapse: collapse; }
+    .recorte th, .recorte td { padding: 8px 10px; text-align: left; border-top: 1px solid var(--borda); }
+    .recorte th { color: var(--verde-escuro); }
     footer { color: var(--texto-suave); background: var(--branco); border-top: 1px solid var(--borda); }
     .rodape-conteudo { padding: 24px 0; font-size: .92rem; }
     .rodape-conteudo p { margin: 0; }
@@ -53,7 +56,15 @@
   </div></header>
   <main>
     <article class="recorte">
-      <p><strong>UF</strong> — Unidade da Federação de origem ou destino da operação de comércio exterior em foco.</p>
+      <table>
+        <thead><tr><th>Sigla</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td><strong>UF</strong></td><td>Unidade Federativa.</td></tr>
+          <tr><td><strong>MUN</strong></td><td>Município.</td></tr>
+          <tr><td><strong>CPLX</strong></td><td>Complexo portuário estadual: conjunto de unidades portuárias de uma mesma UF — por exemplo, o Complexo Portuário de São Paulo.</td></tr>
+          <tr><td><strong>PAÍS</strong></td><td>País.</td></tr>
+        </tbody>
+      </table>
     </article>
   </main>
   <footer><div class="rodape-conteudo"><p><strong>QuantImport — Inteligência para o Agronegócio</strong></p></div></footer>
