@@ -55,7 +55,7 @@
     <article class="conteudo">
       <p>Consulte o significado dos nicks utilizados para identificar os produtos.</p>
       <table>
-        <thead><tr><th>NCM</th><th>Nick</th><th>Nome</th></tr></thead>
+        <thead><tr><th>Nick</th><th>Nome</th><th>NCM</th></tr></thead>
         <tbody id="dicionario-produtos"><tr><td colspan="3">Carregando dicionário...</td></tr></tbody>
       </table>
     </article>
@@ -77,8 +77,8 @@
         tabela.innerHTML = linhas.map((linha) => {
           const campos = [...linha.matchAll(/(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^,]*))/g)]
             .map(([, citado, simples]) => (citado ?? simples).replace(/""/g, '"'));
-          const [ncm, nick, nome] = campos;
-          return `<tr><td>${escapar(ncm)}</td><td><strong>${escapar(nick)}</strong></td><td>${escapar(nome)}</td></tr>`;
+          const [nick, nome, ncm] = campos;
+          return `<tr><td><strong>${escapar(nick)}</strong></td><td>${escapar(nome)}</td><td>${escapar(ncm)}</td></tr>`;
         }).join('');
       })
       .catch(() => {
