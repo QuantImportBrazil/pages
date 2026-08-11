@@ -35,5 +35,32 @@
       botao.addEventListener('click', function () { var escolha = localStorage.getItem(chave) === 'aceito' ? 'recusado' : 'aceito'; localStorage.setItem(chave, escolha); atualizar(); }); atualizar();
     }());
   </script>
+  <style>
+    .consentimento { position: fixed; right: 20px; bottom: 20px; z-index: 1000; width: min(420px, calc(100% - 40px)); padding: 18px; color: #20262d; background: #fff; border: 1px solid #e3e8e5; border-radius: 10px; box-shadow: 0 8px 28px rgba(16,24,40,.16); font: 16px/1.5 Arial, Helvetica, sans-serif; }
+    .consentimento p { margin: 0 0 12px; font-size: .92rem; }
+    .consentimento a { color: #0d4931; }
+    .consentimento-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .consentimento button { padding: 8px 12px; color: #fff; background: #146b45; border: 0; border-radius: 6px; cursor: pointer; font-weight: 700; }
+    .consentimento button.recusar { color: #0d4931; background: transparent; border: 1px solid #e3e8e5; }
+  </style>
+  <div class="consentimento" id="consentimento" role="dialog" aria-label="Consentimento de cookies" hidden>
+    <p>Usamos ferramentas de análise para melhorar o site. Você pode aceitar ou recusar.</p>
+    <div class="consentimento-acoes"><button type="button" data-consent="aceito">Aceitar análise</button><button class="recusar" type="button" data-consent="recusado">Recusar</button> <a href="/privacidade.html">Política de Privacidade</a></div>
+  </div>
+  <script>
+    (function () {
+      var chave = 'quantimport-consentimento-analise';
+      function carregarAnalise() {
+        if (window.gtag) return;
+        var google = document.createElement('script'); google.async = true; google.src = 'https://www.googletagmanager.com/gtag/js?id=G-RGQQTYYPKV'; document.head.appendChild(google);
+        window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; window.gtag('js', new Date()); window.gtag('config', 'G-RGQQTYYPKV');
+        var clarity = document.createElement('script'); clarity.async = true; clarity.src = 'https://www.clarity.ms/tag/y0pygl507e'; document.head.appendChild(clarity);
+      }
+      function definirConsentimento(valor) { localStorage.setItem(chave, valor); document.getElementById('consentimento').hidden = true; if (valor === 'aceito') carregarAnalise(); }
+      var escolha = localStorage.getItem(chave); var banner = document.getElementById('consentimento');
+      if (escolha === 'aceito') carregarAnalise(); else if (!escolha) banner.hidden = false;
+      document.querySelectorAll('[data-consent]').forEach(function (botao) { botao.addEventListener('click', function () { definirConsentimento(botao.dataset.consent); }); });
+    }());
+  </script>
 </body>
 </html>
