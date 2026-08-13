@@ -23,7 +23,7 @@
     .aviso h2 { margin: 0 0 18px; color: var(--verde-escuro); font-size: 1.55rem; }
     .aviso p { margin: 0 0 16px; }
     .aviso p:last-of-type { margin-bottom: 28px; color: var(--texto-suave); }
-    .botao { display: inline-block; padding: 11px 16px; color: var(--branco); background: var(--verde); border-radius: 6px; text-decoration: none; font-weight: 700; }
+    .link-voltar { color: var(--verde-escuro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
     footer { color: var(--texto-suave); background: var(--branco); border-top: 1px solid var(--borda); }
     .rodape-conteudo { padding: 24px 0; font-size: .92rem; }
     .rodape-conteudo p { margin: 0; }
@@ -48,7 +48,7 @@
     <h2 id="titulo-aviso">Como interpretar — conteúdo em preparação</h2>
     <p>Estamos preparando uma orientação detalhada para ajudar você a interpretar corretamente as previsões, métricas e gráficos publicados pelo QuantImport.</p>
     <p>Esta página será disponibilizada em breve.</p>
-    <a class="botao" href="https://quantimportbrazil.github.io/">Voltar à página inicial</a>
+    <a class="link-voltar" id="voltar" href="/pages/">← Voltar à página anterior</a>
   </section></main>
   <footer><div class="rodape-conteudo"><p>André Coutinho Bueno · QuantImport · <a href="mailto:andre.bueno@quantimport.com.br">andre.bueno@quantimport.com.br</a> · Rio de Janeiro, Brasil · <a href="/privacidade.html">Política de Privacidade</a></p></div></footer>
   <div class="consentimento" id="consentimento" role="dialog" aria-label="Consentimento de cookies" hidden>
@@ -56,6 +56,12 @@
     <div class="consentimento-acoes"><button type="button" data-consent="aceito">Aceitar análise</button><button class="recusar" type="button" data-consent="recusado">Recusar</button> <a href="/privacidade.html">Política de Privacidade</a></div>
   </div>
   <script>
+    document.getElementById('voltar').addEventListener('click', function (evento) {
+      evento.preventDefault();
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = '/pages/';
+    });
+
     (function () {
       var chave = 'quantimport-consentimento-analise';
       function carregarAnalise() {
