@@ -54,6 +54,7 @@
         if (window.gtag) return;
         var google = document.createElement('script'); google.async = true; google.src = 'https://www.googletagmanager.com/gtag/js?id=G-RGQQTYYPKV'; document.head.appendChild(google);
         window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; window.gtag('js', new Date()); window.gtag('config', 'G-RGQQTYYPKV');
+        window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
         var clarity = document.createElement('script'); clarity.async = true; clarity.src = 'https://www.clarity.ms/tag/y0pygl507e'; document.head.appendChild(clarity);
       }
       function definirConsentimento(valor) { localStorage.setItem(chave, valor); document.getElementById('consentimento').hidden = true; if (valor === 'aceito') carregarAnalise(); }
