@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Previsões QuantImport para NK em PR."
+  >
+
+  <title>NK — PR | QuantImport</title>
+
+  <style>
+    :root {
+      --verde: #146b45;
+      --verde-escuro: #0d4931;
+      --vinho: #7f1734;
+      --dourado: #c8a52b;
+      --azul: #1769aa;
+      --vermelho: #b42318;
+      --texto: #20262d;
+      --texto-suave: #667085;
+      --borda: #e3e8e5;
+      --fundo: #f4f7f5;
+      --branco: #ffffff;
+      --largura: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--texto);
+      background: var(--fundo);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topo {
+      color: var(--branco);
+      background:
+        linear-gradient(110deg, var(--verde-escuro), var(--verde));
+      border-bottom: 4px solid var(--dourado);
+    }
+
+    .topo-conteudo,
+    main,
+    .rodape-conteudo {
+      width: min(var(--largura), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .topo-conteudo {
+      padding: 22px 0 28px;
+    }
+
+    .marca-linha {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .marca {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+    }
+
+    .marca img {
+      display: block;
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .navegacao {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 20px;
+      font-size: .95rem;
+    }
+
+    .navegacao a {
+      color: var(--branco);
+      text-underline-offset: 4px;
+    }
+
+    .identificacao {
+      margin-top: 28px;
+    }
+
+    .identificacao h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1;
+    }
+
+    .localizacao {
+      margin: 10px 0 0;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .emissao {
+      margin: 8px 0 0;
+      color: #e6f2eb;
+      font-size: 1rem;
+    }
+
+    main {
+      padding: 26px 0 48px;
+    }
+
+    .cenario {
+      display: block;
+      width: 100%;
+      margin-bottom: 26px;
+      padding: 13px 18px;
+      color: var(--branco);
+      background: var(--azul);
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(16, 24, 40, .10);
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .cenario.extraordinario {
+      background: var(--vermelho);
+    }
+
+    .grafico {
+      margin: 0 0 30px;
+      padding: 24px 34px 32px;
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(16, 24, 40, .06);
+    }
+
+    .grafico h2 {
+      margin: 0 0 18px;
+      color: var(--verde-escuro);
+      font-size: 1.3rem;
+    }
+
+    .grafico img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .imagens-detalhamento {
+      display: grid;
+      gap: 32px;
+    }
+
+    footer {
+      color: var(--texto-suave);
+      background: var(--branco);
+      border-top: 1px solid var(--borda);
+    }
+
+    .rodape-conteudo {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 0;
+      font-size: .92rem;
+    }
+
+    .rodape-conteudo p {
+      margin: 0;
+    }
+
+    @media (max-width: 680px) {
+      .topo-conteudo,
+      main,
+      .rodape-conteudo {
+        width: min(100% - 24px, var(--largura));
+      }
+
+      .marca-linha,
+      .rodape-conteudo {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .navegacao {
+        justify-content: flex-start;
+      }
+
+      .grafico {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topo">
+    <div class="topo-conteudo">
+
+      <div class="marca-linha">
+
+        <a class="marca" href="https://quantimportbrazil.github.io/">
+          <img
+            src="/pages/assets/logo.png"
+            alt="Logotipo QuantImport"
+          >
+          <span>QuantImport</span>
+        </a>
+
+        <nav
+          class="navegacao"
+          aria-label="Navegação principal"
+        >
+          <a href="/pages/">Voltar às publicações</a>
+
+          <a href="/pages/uf/pr/">Voltar ao recorte superior</a>
+
+          <a href="/pages/como-interpretar/">
+            Como interpretar os gráficos
+          </a>
+        </nav>
+
+      </div>
+
+      <div class="identificacao">
+        <h1>NK</h1>
+        <p class="localizacao">PR</p>
+        <p class="emissao">
+          <strong>Emissão:</strong> abril
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <a
+      class="cenario"
+      href="/pages/cenarios/base/"
+    >
+      Cenário-base: sem ocorrência extraordinária considerada
+    </a>
+
+
+        <section class="grafico">
+          <h2>Visão Geral</h2>
+          <img
+            src="images/overview.png"
+            alt="Visão geral das previsões"
+          >
+        </section>
+    
+
+  </main>
+
+  <footer>
+    <div class="rodape-conteudo">
+
+      <p><a href="/">Início</a> · <a href="/sobre/">Sobre</a></p>
+
+      <p>Data de publicação: 14/08/2026</p>
+
+    </div>
+  </footer>
+
+  <style>
+    .consentimento { position: fixed; right: 20px; bottom: 20px; z-index: 1000; width: min(420px, calc(100% - 40px)); padding: 18px; color: #20262d; background: #fff; border: 1px solid #e3e8e5; border-radius: 10px; box-shadow: 0 8px 28px rgba(16,24,40,.16); font: 16px/1.5 Arial, Helvetica, sans-serif; }
+    .consentimento p { margin: 0 0 12px; font-size: .92rem; }
+    .consentimento a { color: #0d4931; }
+    .consentimento-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .consentimento button { padding: 8px 12px; color: #fff; background: #146b45; border: 0; border-radius: 6px; cursor: pointer; font-weight: 700; }
+    .consentimento button.recusar { color: #0d4931; background: transparent; border: 1px solid #e3e8e5; }
+  </style>
+  <div class="consentimento" id="consentimento" role="dialog" aria-label="Consentimento de cookies" hidden>
+    <p>Usamos ferramentas de análise para melhorar o site. Você pode aceitar ou recusar.</p>
+    <div class="consentimento-acoes"><button type="button" data-consent="aceito">Aceitar análise</button><button class="recusar" type="button" data-consent="recusado">Recusar</button> <a href="/privacidade.html">Política de Privacidade</a></div>
+  </div>
+  <script>
+    (function () {
+      var chave = 'quantimport-consentimento-analise';
+      function carregarAnalise() {
+        if (window.gtag) return;
+        var google = document.createElement('script'); google.async = true; google.src = 'https://www.googletagmanager.com/gtag/js?id=G-RGQQTYYPKV'; document.head.appendChild(google);
+        window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; window.gtag('js', new Date()); window.gtag('config', 'G-RGQQTYYPKV');
+        var clarity = document.createElement('script'); clarity.async = true; clarity.src = 'https://www.clarity.ms/tag/y0pygl507e'; document.head.appendChild(clarity);
+      }
+      function definirConsentimento(valor) { localStorage.setItem(chave, valor); document.getElementById('consentimento').hidden = true; if (valor === 'aceito') carregarAnalise(); }
+      var escolha = localStorage.getItem(chave); var banner = document.getElementById('consentimento');
+      if (escolha === 'aceito') carregarAnalise(); else if (!escolha) banner.hidden = false;
+      document.querySelectorAll('[data-consent]').forEach(function (botao) { botao.addEventListener('click', function () { definirConsentimento(botao.dataset.consent); }); });
+    }());
+  </script>
+
+</body>
+</html>
