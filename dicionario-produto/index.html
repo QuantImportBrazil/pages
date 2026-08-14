@@ -46,7 +46,7 @@
     <div class="marca-linha">
       <a class="marca" href="https://quantimportbrazil.github.io/"><img src="/pages/assets/logo.png" alt="Logotipo QuantImport"><span>QuantImport</span></a>
       <nav class="navegacao" aria-label="Navegação principal">
-        <a href="/pages/uf/ba/">Voltar à Bahia</a>
+        <a id="voltar" href="/pages/">Voltar</a>
       </nav>
     </div>
     <div class="identificacao"><h1>Dicionário de Produtos</h1><p>Explicação dos nomes simplificados utilizados nas publicações</p></div>
@@ -63,6 +63,13 @@
   </main>
   <footer><div class="rodape-conteudo"><p>André Coutinho Bueno · QuantImport · <a href="mailto:andre.bueno@quantimport.com.br">andre.bueno@quantimport.com.br</a> · Rio de Janeiro, Brasil</p></div></footer>
   <script>
+    document.getElementById('voltar').addEventListener('click', (evento) => {
+      if (document.referrer && history.length > 1) {
+        evento.preventDefault();
+        history.back();
+      }
+    });
+
     const tabela = document.getElementById('dicionario-produtos');
     const escapar = (valor) => String(valor).replace(/[&<>"']/g, (caractere) => ({
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
