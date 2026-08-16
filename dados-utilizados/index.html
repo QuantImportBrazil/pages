@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dados utilizados pelo QuantImport.">
+  <title>Dados utilizados | QuantImport</title>
+  <style>
+    :root { --verde: #146b45; --verde-escuro: #0d4931; --dourado: #c8a52b; --texto: #20262d; --texto-suave: #667085; --borda: #e3e8e5; --fundo: #f4f7f5; --branco: #fff; --largura: 860px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--texto); background: var(--fundo); font: 1rem/1.6 Arial, Helvetica, sans-serif; }
+    .topo { color: var(--branco); background: linear-gradient(110deg, var(--verde-escuro), var(--verde)); border-bottom: 4px solid var(--dourado); }
+    .topo-conteudo, main, .rodape-conteudo { width: min(var(--largura), calc(100% - 48px)); margin-inline: auto; }
+    .topo-conteudo { padding: 22px 0 28px; }
+    .marca-linha { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .marca { display: inline-flex; align-items: center; gap: 12px; color: var(--branco); text-decoration: none; font-size: 1.45rem; font-weight: 700; }
+    .marca img { display: block; width: 46px; height: 46px; object-fit: contain; border-radius: 50%; }
+    .navegacao { display: flex; flex-wrap: wrap; gap: 18px; font-size: .95rem; }
+    .navegacao a { color: var(--branco); text-underline-offset: 4px; }
+    h1 { margin: 28px 0 0; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; }
+    main { padding: 42px 0 54px; }
+    .aviso { padding: 32px; background: var(--branco); border: 1px solid var(--borda); border-radius: 10px; box-shadow: 0 4px 16px rgba(16, 24, 40, .06); }
+    .aviso h2 { margin: 0 0 18px; color: var(--verde-escuro); font-size: 1.55rem; }
+    .aviso p { margin: 0 0 16px; }
+    .aviso p:last-of-type { margin-bottom: 28px; color: var(--texto-suave); }
+    .link-voltar { color: var(--verde-escuro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    footer { color: var(--texto-suave); background: var(--branco); border-top: 1px solid var(--borda); }
+    .rodape-conteudo { padding: 24px 0; font-size: .92rem; }
+    .rodape-conteudo p { margin: 0; }
+    .consentimento { position: fixed; right: 20px; bottom: 20px; z-index: 1000; width: min(420px, calc(100% - 40px)); padding: 18px; color: var(--texto); background: var(--branco); border: 1px solid var(--borda); border-radius: 10px; box-shadow: 0 8px 28px rgba(16,24,40,.16); }
+    .consentimento p { margin: 0 0 12px; font-size: .92rem; }
+    .consentimento a { color: var(--verde-escuro); }
+    .consentimento-acoes { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .consentimento button { padding: 8px 12px; color: var(--branco); background: var(--verde); border: 0; border-radius: 6px; cursor: pointer; font-weight: 700; }
+    .consentimento button.recusar { color: var(--verde-escuro); background: transparent; border: 1px solid var(--borda); }
+    @media (max-width: 680px) { .topo-conteudo, main, .rodape-conteudo { width: min(100% - 24px, var(--largura)); } .marca-linha { align-items: flex-start; flex-direction: column; } .aviso { padding: 24px; } }
+  </style>
+</head>
+<body>
+  <header class="topo"><div class="topo-conteudo">
+    <div class="marca-linha">
+      <a class="marca" href="https://quantimportbrazil.github.io/"><img src="/pages/assets/logo.png" alt="Logotipo QuantImport"><span>QuantImport</span></a>
+      <nav class="navegacao" aria-label="Navegação principal"><a href="https://quantimportbrazil.github.io/">Início</a><a href="/pages/">Publicações</a></nav>
+    </div>
+    <h1>Dados utilizados</h1>
+  </div></header>
+  <main><section class="aviso" aria-labelledby="titulo-aviso">
+    <h2 id="titulo-aviso">Dados utilizados — conteúdo em preparação</h2>
+    <p>Estamos preparando uma orientação detalhada para ajudar você a interpretar corretamente as previsões, métricas e gráficos publicados pelo QuantImport.</p>
+    <p>Esta página será disponibilizada em breve.</p>
+    <a class="link-voltar" id="voltar" href="/pages/">← Voltar à página anterior</a>
+  </section></main>
+  <footer><div class="rodape-conteudo"><p>André Coutinho Bueno · QuantImport · <a href="mailto:andre.bueno@quantimport.com.br">andre.bueno@quantimport.com.br</a> · Rio de Janeiro, Brasil · <a href="/privacidade.html">Política de Privacidade</a></p></div></footer>
+  <div class="consentimento" id="consentimento" role="dialog" aria-label="Consentimento de cookies" hidden>
+    <p>Usamos ferramentas de análise para melhorar o site. Você pode aceitar ou recusar.</p>
+    <div class="consentimento-acoes"><button type="button" data-consent="aceito">Aceitar análise</button><button class="recusar" type="button" data-consent="recusado">Recusar</button> <a href="/privacidade.html">Política de Privacidade</a></div>
+  </div>
+  <script>
+    document.getElementById('voltar').addEventListener('click', function (evento) {
+      evento.preventDefault();
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = '/pages/';
+    });
+
+    (function () {
+      var chave = 'quantimport-consentimento-analise';
+      function carregarAnalise() {
+        if (window.gtag) return;
+        var google = document.createElement('script'); google.async = true; google.src = 'https://www.googletagmanager.com/gtag/js?id=G-RGQQTYYPKV'; document.head.appendChild(google);
+        window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; window.gtag('js', new Date()); window.gtag('config', 'G-RGQQTYYPKV');
+        window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+        var clarity = document.createElement('script'); clarity.async = true; clarity.src = 'https://www.clarity.ms/tag/y0pygl507e'; document.head.appendChild(clarity);
+      }
+      function definirConsentimento(valor) { localStorage.setItem(chave, valor); document.getElementById('consentimento').hidden = true; if (valor === 'aceito') carregarAnalise(); }
+      var escolha = localStorage.getItem(chave); var banner = document.getElementById('consentimento');
+      if (escolha === 'aceito') carregarAnalise(); else if (!escolha) banner.hidden = false;
+      document.querySelectorAll('[data-consent]').forEach(function (botao) { botao.addEventListener('click', function () { definirConsentimento(botao.dataset.consent); }); });
+    }());
+  </script>
+</body>
+</html>
