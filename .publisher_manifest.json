@@ -1,7 +1,11 @@
 [
   "brasil/adubos",
+  "brasil/graos",
   "brasil/np_nk_pk",
+  "mun/paranagua/np_nk_pk",
   "uf/ba/mop",
+  "uf/pr/mop",
+  "uf/pr/nk",
   "uf/rs/ureia",
   "uf/sp/map"
 ]

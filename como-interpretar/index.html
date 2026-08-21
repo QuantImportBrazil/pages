@@ -23,6 +23,9 @@
     .aviso h2 { margin: 0 0 18px; color: var(--verde-escuro); font-size: 1.55rem; }
     .aviso p { margin: 0 0 16px; }
     .aviso p:last-of-type { margin-bottom: 28px; color: var(--texto-suave); }
+    .limites-previsao { margin: 28px 0; padding-top: 28px; border-top: 1px solid var(--borda); }
+    .limites-previsao h2 { margin-bottom: 12px; }
+    .limites-previsao p { margin-bottom: 0; }
     .link-voltar { color: var(--verde-escuro); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
     footer { color: var(--texto-suave); background: var(--branco); border-top: 1px solid var(--borda); }
     .rodape-conteudo { padding: 24px 0; font-size: .92rem; }
@@ -48,9 +51,13 @@
     <h2 id="titulo-aviso">Como interpretar — conteúdo em preparação</h2>
     <p>Estamos preparando uma orientação detalhada para ajudar você a interpretar corretamente as previsões, métricas e gráficos publicados pelo QuantImport.</p>
     <p>Esta página será disponibilizada em breve.</p>
+    <section class="limites-previsao" aria-labelledby="titulo-limites-previsao">
+      <h2 id="titulo-limites-previsao">Limites da previsão</h2>
+      <p>Uma previsão não busca acertar exatamente o valor futuro, mas aproximá-lo com erro conhecido. Novos dados e testes podem melhorar seu desempenho, embora sempre exista incerteza.</p>
+    </section>
     <a class="link-voltar" id="voltar" href="/pages/">← Voltar à página anterior</a>
   </section></main>
-  <footer><div class="rodape-conteudo"><p>André Coutinho Bueno · QuantImport · <a href="mailto:andre.bueno@quantimport.com.br">andre.bueno@quantimport.com.br</a> · Rio de Janeiro, Brasil · <a href="/privacidade.html">Política de Privacidade</a></p></div></footer>
+  <footer><div class="rodape-conteudo"><p>QuantImport · <a href="mailto:andre.bueno@quantimport.com.br">andre.bueno@quantimport.com.br</a> · Rio de Janeiro, Brasil · <a href="https://quantimportbrazil.github.io/sobre/privacidade.html">Política de Privacidade</a></p></div></footer>
   <div class="consentimento" id="consentimento" role="dialog" aria-label="Consentimento de cookies" hidden>
     <p>Usamos ferramentas de análise para melhorar o site. Você pode aceitar ou recusar.</p>
     <div class="consentimento-acoes"><button type="button" data-consent="aceito">Aceitar análise</button><button class="recusar" type="button" data-consent="recusado">Recusar</button> <a href="/privacidade.html">Política de Privacidade</a></div>
