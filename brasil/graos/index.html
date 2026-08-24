@@ -209,8 +209,15 @@
       .grafico {
         padding: 16px;
       }
+
     }
   </style>
+<!-- estilo-aviso-teste-online -->
+<style>
+  .aviso-teste-online { display: flex; justify-content: center; margin: 0 0 22px; }
+  .aviso-teste-online span { display: inline-flex; align-items: center; min-height: 30px; padding: 5px 12px; color: var(--texto-suave); background: var(--branco); border: 1px solid var(--borda); border-radius: 999px; font-size: .82rem; font-weight: 700; letter-spacing: .04em; line-height: 1.2; text-transform: uppercase; }
+  @media (max-width: 680px) { .aviso-teste-online { margin-bottom: 18px; } }
+</style>
 </head>
 
 <body>
@@ -255,6 +262,8 @@
   </header>
 
   <main>
+    <!-- aviso-teste-online -->
+<p class="aviso-teste-online"><span>Teste online</span></p>
 
     <a
       class="cenario"
