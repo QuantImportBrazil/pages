@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cenários são conjuntos de premissas aplicadas manualmente aos valores futuros de fatores explicativos.">
+  <title>Cenários | QuantImport</title>
+  <style>
+    :root { --verde: #146b45; --verde-escuro: #0d4931; --dourado: #c8a52b; --texto: #20262d; --texto-suave: #667085; --borda: #e3e8e5; --fundo: #f4f7f5; --branco: #fff; --largura: 980px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--texto); background: var(--fundo); font: 1rem/1.6 Arial, Helvetica, sans-serif; }
+    .topo { color: var(--branco); background: linear-gradient(110deg, var(--verde-escuro), var(--verde)); border-bottom: 4px solid var(--dourado); }
+    .topo-conteudo, main, .rodape-conteudo { width: min(var(--largura), calc(100% - 48px)); margin-inline: auto; }
+    .topo-conteudo { padding: 22px 0 28px; }
+    .marca-linha { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .marca { display: inline-flex; align-items: center; gap: 12px; color: var(--branco); text-decoration: none; font-size: 1.45rem; font-weight: 700; }
+    .marca img { display: block; width: 46px; height: 46px; object-fit: contain; border-radius: 50%; }
+    .navegacao { display: flex; flex-wrap: wrap; gap: 18px; }
+    .navegacao a { color: var(--branco); text-underline-offset: 4px; }
+    h1 { margin: 28px 0 0; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; }
+    main { padding: 38px 0 54px; }
+    .introducao { margin: 0 0 24px; padding: 26px; background: var(--branco); border: 1px solid var(--borda); border-radius: 10px; box-shadow: 0 4px 16px rgba(16,24,40,.06); }
+    .introducao p { margin: 0; color: var(--texto-suave); font-size: 1.08rem; }
+    .pontos { margin: 0 0 28px; padding-left: 24px; }
+    .pontos li { margin: 8px 0; }
+    .cartoes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .cartao { padding: 24px; background: var(--branco); border: 1px solid var(--borda); border-top: 4px solid var(--dourado); border-radius: 10px; box-shadow: 0 4px 16px rgba(16,24,40,.06); }
+    .cartao h2 { margin: 0 0 8px; color: var(--verde-escuro); font-size: 1.3rem; }
+    .cartao p { margin: 0; color: var(--texto-suave); }
+    footer { color: var(--texto-suave); background: var(--branco); border-top: 1px solid var(--borda); }
+    .rodape-conteudo { padding: 24px 0; font-size: .92rem; } .rodape-conteudo p { margin: 0; }
+    @media (max-width: 680px) { .topo-conteudo, main, .rodape-conteudo { width: min(100% - 24px, var(--largura)); } .marca-linha { align-items: flex-start; flex-direction: column; } .cartoes { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="topo"><div class="topo-conteudo"><div class="marca-linha">
+    <a class="marca" href="https://quantimportbrazil.github.io/"><img src="/pages/assets/logo.png" alt="Logotipo QuantImport"><span>QuantImport</span></a>
+    <nav class="navegacao" aria-label="Navegação principal"><a href="/">Início</a><a href="/pages/">Publicações</a></nav>
+  </div><h1>Cenários</h1></div></header>
+  <main><section class="introducao"><p>Cenários são conjuntos de premissas aplicadas manualmente aos valores futuros de fatores explicativos.</p></section>
+    <ul class="pontos"><li>Cenário não é previsão de um acontecimento.</li><li>Não altera dados realizados.</li><li>As previsões resultantes ficam condicionadas às premissas adotadas.</li><li>Permite comparar consequências possíveis.</li></ul>
+    <section class="cartoes" aria-label="Cenários disponíveis">
+      <article class="cartao"><h2>Cenário-base</h2>
+        <p>Sem premissas manuais adicionais.</p></article>
+      <article class="cartao"><h2>Cenário Hormuz</h2>
+        <p>Considera restrições ao comércio exterior de países cuja saída marítima depende da passagem pelo Estreito de Ormuz.</p></article>
+    </section>
+  </main>
+  <footer><div class="rodape-conteudo"><p>QuantImport · <a href="mailto:andre.bueno@quantimport.com.br">andre.bueno@quantimport.com.br</a> · Rio de Janeiro, Brasil · <a href="https://quantimportbrazil.github.io/sobre/privacidade.html">Política de Privacidade</a></p></div></footer>
+</body>
+</html>
